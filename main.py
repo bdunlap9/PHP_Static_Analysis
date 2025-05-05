@@ -344,11 +344,6 @@ RAW_VULN_PATTERNS = [
 
 ]
 
-RAW_VULN_PATTERNS = [
-    {"name": "Use of eval()", "severity": 3, "message": "Eval on user input", "impact": "Arbitrary code execution", "recommendation": "Remove eval() usage", "regex": r"\beval\s*\("},
-    {"name": "Obfuscated eval(b64)", "severity": 3, "message": "eval(base64_decode())", "impact": "RCE via encoded payload", "recommendation": "Disable obfuscation", "regex": r"eval\s*\(\s*base64_decode"},
-    {"name": "Shell execution", "severity": 3, "message": "system/exec functions", "impact": "Command injection", "recommendation": "Sanitize inputs; avoid shell calls", "regex": r"\b(system|exec|shell_exec|passthru)\s*\("},  
-]
 SANITIZER_PATTERNS = [
     re.compile(r"htmlspecialchars\s*\(", re.IGNORECASE),
     re.compile(r"htmlentities\s*\(",     re.IGNORECASE),
